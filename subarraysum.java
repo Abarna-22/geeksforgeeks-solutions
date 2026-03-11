@@ -1,0 +1,76 @@
+<<<<<<< HEAD:Day-1/subarraysum.java
+import java.util.*;
+public class subarraysum {
+    static ArrayList<Integer> subarraySum(int[] arr, int target) {
+        
+        ArrayList<Integer> result = new ArrayList<>();
+        
+        int start = 0;
+        int sum = 0;
+        
+        for(int end = 0; end < arr.length; end++)
+        {
+            sum += arr[end];
+            
+            while(sum > target && start <= end)
+            {
+                sum -= arr[start];
+                start++;
+            }
+            
+            if(sum == target)
+            {
+                result.add(start + 1);  
+                result.add(end + 1);
+                return result;
+            }
+        }
+        
+        result.add(-1);
+        return result;
+    }
+    public static void main(String[] args)
+    {
+        int arr[]={1,2,3,7,5};
+        int target=12;
+        System.out.println(subarraySum(arr,target));
+    }
+}
+
+=======
+import java.util.*;
+public class subarraysum {
+    static ArrayList<Integer> subarraySum(int[] arr, int target) {
+        ArrayList<Integer> result = new ArrayList<>();
+        int start = 0;
+        int sum = 0;
+        for(int end = 0; end < arr.length; end++)
+        {
+            sum += arr[end];
+            
+            while(sum > target && start <= end)
+            {
+                sum -= arr[start];
+                start++;
+            }
+            
+            if(sum == target)
+            {
+                result.add(start + 1);  
+                result.add(end + 1);
+                return result;
+            }
+        }
+        
+        result.add(-1);
+        return result;
+    }
+    public static void main(String[] args)
+    {
+        int arr[]={1,2,3,7,5};
+        int target=12;
+        System.out.println(subarraySum(arr,target));
+    }
+}
+
+>>>>>>> 7fd8506 (Updated project files):subarraysum.java
